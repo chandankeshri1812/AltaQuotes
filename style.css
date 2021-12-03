@@ -1,0 +1,196 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Sail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.main{
+
+    /* background: grey; */
+    height: 100vh;
+    width: 100vw;
+    /* border: 2px solid red; */
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg, red, blue);
+
+}
+.inner{
+    height: 80vh;
+    width: 70vw;
+    border-radius: 15px;
+    background:rgb(255, 255, 255);
+    
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+.box{
+    height: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box h1{
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+font-style: italic;
+font-weight: bold;
+font-weight:600;
+}
+#tweetMe{
+    height: 5vw;
+   cursor: pointer;
+color: #1DA1F2;
+
+}
+.start-quote{
+    font-size: 4vw;
+    padding-left: 6px;
+color: #1DA1F2;
+}
+.text{
+    /* border: 2px solid #0b0ecca8; */
+    height: 70%;
+    width: auto;
+    font-family: 'Sail', cursive;
+    background-color: rgb(114, 103, 87);
+    font-size: 55px;
+    text-align: center;
+    flex-wrap: wrap;
+    padding:28px;
+}
+#quotes{
+    color: white;
+}
+#author{
+color:black;
+font-size: 40px;
+padding-top: 12px;
+}
+
+.btn{
+    /* border: 2px solid yellowgreen; */
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    height: 15%;
+    width: 100%;
+    font-family: 'Playfair Display', serif;
+    font-weight:600;
+    font-size: 50px;
+    font-style: italic;
+    cursor: pointer;
+    -webkit-user-select: none; 
+     -ms-user-select: none; 
+     user-select: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 1100px) {
+    .inner{
+        height: 80vh;
+        width: 70vw;
+    }
+  .box{
+      height: 10%;
+  }
+    .text{
+        height: 80%;
+         font-size: 60px;
+
+    }
+    #author{
+        font-size: 45px;
+        padding-top: 4px;
+    }
+    .btn{
+        height: 10%;
+        font-size: 40px;
+    }
+    .box h1{
+        font-size: 28px;
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .box{
+    height: 50px;
+    padding-left: 2px;
+    }
+    #tweetMe{
+        height: 9vw;
+    }
+    .start-quote{
+         padding-left: 1px;
+        font-size: 7vw;
+    }
+    .text{
+        height: 80%;
+         font-size: 35px;
+    }
+    #author{
+        font-size: 25px;
+        padding-top: 4px;
+    }
+    .btn{
+        height: 10%;
+        font-size: 30px;
+    }
+    .box h1{
+        font-size: 24px;
+    }
+}
+
+@media only screen and (max-width: 468px) {
+    
+   
+    #author{
+        font-size: 15px;
+        padding-top: 4px;
+    }
+    .btn{
+        font-size: 25px;
+    }
+    .box h1{
+        font-size: 14px;
+    }
+    .text{
+        height: 80%;
+         font-size: 29px;
+    }
+    #author{
+        font-size: 22px;
+        padding-top: 4px;
+    }
+    
+}
+
+@media only screen and (max-width: 300px) {
+    
+    .text{
+        height: 80%;
+         font-size: 22px;
+    }
+    #author{
+        font-size: 15px;
+        padding-top: 4px;
+    }
+    .btn{
+        font-size: 25px;
+    }
+    .box h1{
+        font-size: 12px;
+    }
+   
+    #author{
+        font-size: 15px;
+        padding-top: 4px;
+    }
+    
+}

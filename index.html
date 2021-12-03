@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today Motivational Quotes | Words of Encouragement - You Will Be Inspired</title>
+    <link rel="shortcut icon" href="favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+        integrity="sha512-PgQMlq+nqFLV4ylk1gwUOgm6CtIIXkKwaIHp/PAIWHzig/lKZSEGKEysh0TCVbHJXCLN7WetD8TFecIky75ZfQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<!-- You Should Experience Motivatonal Quotes At Least Once In Your Lifetime And Here's Why. -->
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="inner">
+
+                <div class="box">
+                    <i class="start-quote fas fa-quote-left"></i>
+
+                    <h1>Words of Encouragement</h1>
+                    <p class="number">
+                        <img title="TweetMe" id="tweetMe" src="tweet.png" alt="TweetMe" />
+                    </p>
+
+                </div>
+
+                <div class="text">
+                    <p id="quotes"></p>
+                    <p id="author" class="author"></p>
+                </div>
+                <div id="newQ" class="btn">New Quotes</div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const quotes = document.getElementById("quotes");
+        const author = document.getElementById("author");
+        const newQ = document.getElementById("newQ");
+        const tweetMe = document.getElementById("tweetMe");
+        let realData = "";
+        let QuotesData = "";
+
+        const tweetNow = () => {
+            let tweetPost = `https://twitter.com/intent/tweet?text=${QuotesData.text}`;
+            window.open(tweetPost);
+        }
+        const getNewQuotes = () => {
+            let rnum = Math.floor(Math.random() * 1643);
+            QuotesData = realData[rnum];
+            quotes.innerHTML = `${QuotesData.text}`;
+            QuotesData.author == null ?
+                author.innerHTML = "Unknown" : author.innerHTML = "By  " + `${QuotesData.author}`;
+        };
+        const getQuotes = async () => {
+            const api = "https://type.fit/api/quotes";
+            try {
+                let data = await fetch(api);
+                realData = await data.json();
+                getNewQuotes();
+            } catch (error) { }
+        };
+        tweetMe.addEventListener('click', tweetNow);
+        newQ.addEventListener('click', getNewQuotes);
+        getQuotes();
+
+
+
+    </script>
+</body>
